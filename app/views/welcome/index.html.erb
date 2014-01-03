@@ -1,0 +1,125 @@
+
+<html>
+    <head>
+        <title>Welcome on Crypto Trader portal</title>
+
+        <%= stylesheet_link_tag "crypto_portal", :media => "all" %>
+        <%= stylesheet_link_tag "flatly", :media => "all" %>
+
+
+    </head>
+
+    <body>
+
+       <div class="quotazione">
+        <div class="container-fluid">
+          <div class="row-fluid">
+
+            <div class="span12">
+              <!-- Body content -->
+              <div class="text-center " >
+                <h1>Quotazione attuale</h1>
+                <p class="lead">  <%= @quotazione + 10 %> EUR/BTC</p>
+                <p><a href="#" class="btn btn-default" role="button">Fai un ordine</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+       </div>
+
+       <div class="modalita">
+         <div class="row-fluid">
+           <div class="span6">
+             <div class="row">
+             </div>
+           </div>
+           <div class="spa6">
+
+           </div>
+         </div>
+       </div>
+
+       <div class="contattaci">
+         <div class="row-fluid">
+           <div class="col-md-6 col-md-offset-3" style="margin-top: 80px">
+             <form class="bs-example form-horizontal">
+               <fieldset>
+                 <legend>Invia Ordine</legend>
+
+                 <!-- Nome compratore -->
+                 <div class="form-group" >
+                   <label for="inputEmail" class="col-lg-2 control-label">Nick</label>
+                   <div class="col-lg-10">
+                     <input type="text" class="form-control" id="inputNick" placeholder="Nick">
+                   </div>
+                 </div>
+
+                 <!-- Email compratore -->
+                 <div class="form-group" >
+                   <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                   <div class="col-lg-10">
+                     <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                   </div>
+                 </div>
+
+                 <div class="form-group valute" >
+                     <div class="input-group valute">
+                       <span class="input-group-addon">EUR</span>
+
+                       <input type="text" class="form-control" placeholder="[@quotazione]">
+
+                       <span class="input-group-addon">BTC</span>
+                       <input type="text" class="form-control" placeholder="1">
+                     </div>
+                 </div>
+
+
+                 <div class="form-group">
+                   <label for="select" class="col-lg-2 control-label">Pagamento</label>
+                   <div class="col-lg-10">
+                     <select class="form-control" id="select">
+                       <option>Postepay</option>
+                       <option>Scambio a mano</option>
+                     </select>
+                     <br>
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label for="textArea" class="col-lg-2 control-label">Note</label>
+                   <div class="col-lg-10">
+                     <textarea class="form-control" rows="3" id="textArea"></textarea>
+                     <span class="help-block">Inserisci delle note come orario per l'incontro e/o luogo</span>
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <div class="col-lg-10 col-lg-offset-2">
+                     <button class="btn btn-default">Cancella</button>
+                     <button type="submit" class="btn btn-primary">Invia</button>
+                   </div>
+                 </div>
+               </fieldset>
+             </form>
+           </div>
+
+         </div>
+       </div>
+
+       <%= javascript_include_tag "flatly" %>
+       <%= javascript_include_tag "simple_sidebar" %>
+
+    </body>
+
+<script>
+  function get_gox_ticker(){
+      var MtGoxClient = require("./assets/javascript/markets/mtgox/mtgox")
+      var client = new MtGoxClient("982121a5-56c9-4510-9880-116ad4a03fe7" , "eMuVcDVYb10rTp21tVuxDE0aza17g3x3W2gcxx01oCaQ75huO4jZ0VySPjHlwUqsRVXDh24XbHGnJ/pUv34Cow==")
+
+      client.ticker(function(err, json){
+          if(err) { throw err; }
+          return json;
+      });
+  }
+</script>
+</html>

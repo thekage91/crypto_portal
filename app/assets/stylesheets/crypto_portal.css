@@ -1,0 +1,49 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.quotazione{
+    background: #ffffff;
+    border: 1px outset #000;
+    overflow: auto;
+    height:100%;
+    align-content: center;
+}
+
+.modalita{
+    background: #04498C;
+    overflow: auto;
+    height: 60%;
+}
+
+.contattaci{
+    background: #ffffff;
+    border: 1px outset #000;
+    overflow: auto;
+    height:100%;
+    align-content: center;
+}
+
+.thumbnail{
+    margin-left: 50px;
+    border: 0px;
+    background: #04498C;
+
+}
+
+.btn{
+    background: #04498C;
+    color: #ffffff;
+}
+
+.text-center{
+    margin-top: 200px;
+}
+
+.valute{
+    width: 75%;
+    margin: auto 100% auto 45%;
+}
